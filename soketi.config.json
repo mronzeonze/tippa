@@ -1,0 +1,47 @@
+{
+    "debug": true,
+    "port": 6001,
+    "appManager": {
+        "driver": "array",
+        "array": {
+            "apps": [
+                {
+                    "id": "your-app-id",
+                    "key": "your-app-key",
+                    "secret": "your-app-secret",
+                    "maxConnections": 100,
+                    "enableClientMessages": true,
+                    "enabled": true,
+                    "maxBackendEventsPerSecond": 100,
+                    "maxClientEventsPerSecond": 100,
+                    "maxReadRequestsPerSecond": 100
+                }
+            ]
+        }
+    },
+    "cors": {
+        "credentials": true,
+        "origin": ["http://localhost:8000", "http://127.0.0.1:8000"],
+        "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+        "allowedHeaders": [
+            "Origin",
+            "Content-Type",
+            "X-Auth-Token",
+            "X-Requested-With",
+            "Accept",
+            "Authorization",
+            "X-CSRF-TOKEN",
+            "XSRF-TOKEN",
+            "X-Socket-Id"
+        ]
+    },
+    "database": {
+        "driver": "memory"
+    },
+    "httpApi": {
+        "requestLimitInMb": 100,
+        "acceptTraffic": {
+            "memoryThreshold": 85
+        }
+    }
+}
